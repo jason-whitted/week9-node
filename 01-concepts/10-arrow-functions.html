@@ -1,0 +1,17 @@
+<script>
+  let id = 0;
+
+  const person = {
+    name: "Bob",
+    age: 42,
+    speak: () => {
+      id++;
+      const prefix = id + ":";
+      console.log(prefix, "My name is", this.name, "and I am", this.age, "years old.");
+    }
+  };
+
+  person.speak();
+  person.speak();
+  person.speak();
+</script>

@@ -1,0 +1,26 @@
+<script>
+  let id = 0;
+
+  const person = {
+    name: "Bob",
+    age: 42,
+    speak: function () {
+      id++;
+      const prefix = id + ":";
+      console.log(prefix, "My name is", this.name, "and I am", this.age, "years old.");
+    }
+  };
+
+  const a = person.speak;
+
+  const dog = { name: "Fido", age: 3 };
+
+  const b = person.speak.bind(dog);
+
+  person.speak();
+  a();
+  b();
+  person.speak();
+  a();
+  b();
+</script>
